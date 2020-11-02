@@ -4,4 +4,167 @@
 @{
     ViewData["Title"] = "Index";
 }
-<h1>@ViewData["Title"]</h1>
+<div class="container-fluid">
+
+    <div class="bgi">
+        <div class="bgc bgs">
+            <div id="introBox" style="margin-bottom:100px">Canberra Restaurants</div>
+            <div id="quote" style="padding-bottom:100px;">
+                <p class="frontQ">"One cannot think well, love well, sleep well, if one has not dined well."</p>
+                <h1 class="niccone" style="padding-top:0px;">Virginia Woolf</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-12 pb30">
+                <h1 id="blue" class="niccone">Welcome To</h1>
+                <h2 class="oxygenh2">Canberra Restaurants</h2>
+                <p style="padding-left:10px">
+                    At Canberra Restaurants, we provide an overview of restaurants
+                    within Canberra and allow you to find a mean based on a certain
+                    cuisine, a specific dish that you're after or if you're just after a
+                    meal within price range.
+                </p>
+                <p style="padding-left:10px"> We've got it all here for you. Just scroll down for further information.</p>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12 welcome-image pb30">
+                <div class="row centre p10">
+                    <div class="col-md-6 col-sm-6 col-6" style="background-size:90%"><img src="../images/burger.jpeg" alt="Hamburger and Chips" /></div>
+                    <div class="col-md-6 col-sm-6 col-6" style="background-size:90%"><img src="../images/pasta.jpeg" alt="Chicken pasta" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgi">
+        <div class="bgc">
+            <div class="container-fluid bgc">
+                <div class="row IndexDisc">
+                    <div class="col-md-3 col-sm-12 col-12 block">
+                        <h1 class="IndexHead niccone">Cuisines</h1>
+                        <p>
+                            The multicultural society in Canberra spoils the locals
+                            with such a vast amount of flavours from around the world.
+                        </p>
+                        <p>
+                            <a style="color:goldenrod" asp-controller="Home" asp-action="Cuisines">Click Here</a> to find out more
+                            about the different cuisines available
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-12 block">
+                        <h1 class="IndexHead niccone">Dishes</h1>
+                        <p>With a great amount of cuisines comes a great amount of dishes!</p>
+                        <p>There are so many amazing dishes out there for you to try.</p>
+                        <p>
+                            <a style="color:goldenrod" asp-controller="Home" asp-action="Dishes">Click Here</a> to look for a dish.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-12 block">
+                        <h1 class="IndexHead niccone">Prices</h1>
+                        <p>
+                            Whether you're after a super cheap meal or want to treat yourself
+                            to something a little more fancy. Canberra has it all.
+                        </p>
+                        <p>
+                            <a style="color:goldenrod" asp-controller="Home" asp-action="Prices">Click Here</a> to see
+                            what's available in your price range.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-12 block">
+                        <h1 class="IndexHead niccone">Locations</h1>
+                        <p>
+                            There might be the perfect meal waiting just around the corner from
+                            you. Check out our locations page to find a restaurant near you!
+                        </p>
+                        <p>
+                            <a style="color:goldenrod" asp-controller="Home" asp-action="Locations">Click Here</a> to see
+                            what's available near you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 welcome-image pb30">
+                <div class="row centre p10">
+                    <div class="col-md-6 col-sm-6 col-6" style="background-size:90%"><img src="../images/burger.jpeg" alt="Hamburger and Chips" /></div>
+                    <div class="col-md-6 col-sm-6 col-6" style="background-size:90%"><img src="../images/pasta.jpeg" alt="Chicken pasta" /></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12 pb30">
+                <h1 id="blue" class="niccone">Reviews</h1>
+                <h2 class="oxygenh2">Can't make up your mind?</h2>
+                <p style="padding-left:10px">
+                    People from all around Australia have already visited these restaurants and have given us their thoughts
+                </p>
+                <p style="padding-left:10px">Head over to our <a asp-controller="Home" asp-action="Reviews">Customer Reviews page</a> to find out more</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="blueHr" style=" height: 4px;">
+    <h1 class="hrText niccone">Featured Restaurants</h1>
+    <hr class="blueHr">
+    <div id="restaurantsCar" class="carousel slide" data-ride="carousel" data-interval="6000">
+        <ol class="carousel-indicators">
+            <li data-target="#restaurantsCar" data-slide-to="0" class="active"></li>
+            <li data-target="#restaurantsCar" data-slide-to="1"></li>
+            <li data-target="#restaurantsCar" data-slide-to="2"></li>
+            <li data-target="#restaurantsCar" data-slide-to="3"></li>
+            <li data-target="#restaurantsCar" data-slide-to="4"></li>
+            <li data-target="#restaurantsCar" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="images/carousel/bellucis.jpg" alt="Belluci’s Italian" class="img-responsive" onclick="parent.location='https://bellucis.com.au/home.php'" />
+                <div class="carousel-caption" role="option">
+                    <p>Belluci’s Italian</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/itandsons_car.jpg" alt="Italian and Sons" class="img-responsive" onclick="parent.location='http://italianandsons.com.au/'" />
+                <div class="carousel-caption" role="option">
+                    <p>Italian and Sons</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/bluginger_car.jpg" alt="Blu Ginger" class="img-responsive" onclick="parent.location='http://www.bluginger.com.au/'" />
+                <div class="carousel-caption" role="option">
+                    <p>Blu Ginger</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/jewel_car.jpg" alt="Jewel of India" class="img-responsive" onclick="parent.location='http://www.jewelofindia.com.au/'" />
+                <div class="carousel-caption" role="option">
+                    <p>Jewel of India</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/chairman_car.jpeg" alt="Chairman & Yip" class="img-responsive" onclick="parent.location='http://chairmangroup.com.au/chairmanyip/'" />
+                <div class="carousel-caption" role="option">
+                    <p>Chairman & Yip</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/dicksonnoodle_car.jpeg" alt="Dickson Asian Noodle House" class="img-responsive" onclick="parent.location='https://www.facebook.com/pages/Dickson-Asian-Noodle-House/156690017692038'" />
+                <div class="carousel-caption" role="option">
+                    <p>Dickson Asian Noodle House</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#restaurantsCar" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true">
+            </span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#restaurantsCar" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true">
+            </span><span class="sr-only">Next</span>
+        </a>
+    </div>
+
+</div>
