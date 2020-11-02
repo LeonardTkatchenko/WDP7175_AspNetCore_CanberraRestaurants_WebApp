@@ -44,7 +44,7 @@ function BelluciItalian(map) {
     var char = String.fromCharCode(45)
     var link = '<a href = "https://bellucis.com.au/home.php">Click Here</a>';
     var restaurantInfo = ' <h3>Belluci\'s Italian</h3>' +
-        ' <img src="images/location/bellucis_logo.jpg"' +
+        ' <img src="../images/location/bellucis_logo.jpg"' +
         '      style="float:left; width:25%; margin-right:10px;">' +
         " <p>Belluci's demonstrates a new concept, a new food philosophy " + char + " the dawn of a new era in Canberra dining. " +
         "Having been established more than 20 years ago, Belluci's fast became an iconic name in Canberra. " +
@@ -65,7 +65,7 @@ function ItalianAndSons(map) {
     restaurantMarker.setMap(map);
     var link = '<a href = "http://italianandsons.com.au/">Click Here</a>';
     var restaurantInfo = ' <h3>Italian and Sons</h3>' +
-        ' <img src="images/location/is_logo.jpg"' +
+        ' <img src="../images/location/is_logo.jpg"' +
         '      style="float:left; width:25%; margin-right:10px;">' +
         " <p>A casual Italian trattoria that specialises in wood fired pizzas such as Rucola with Prosciutto di Parma, " +
         "rucola & reggiano. Don't miss daily changing main dishes of the day such as their wood roast suckling pig," +
@@ -86,7 +86,7 @@ function BluGinger(map) {
     restaurantMarker.setMap(map);
     var link = '<a href = "http://www.bluginger.com.au/">Click Here</a>';
     var restaurantInfo = ' <h3>Blu Ginger</h3>' +
-        ' <img src="images/location/bluginger_logo.jpg"' +
+        ' <img src="../images/location/bluginger_logo.jpg"' +
         '      style="float:left; width:25%; margin-right:10px;">' +
         " <p>At Blu Ginger we use only the freshest locally sourced produce, combined with authentic " +
         "spices imported directly from the sub-continent, to offer classic, traditional recipes with " +
@@ -107,7 +107,7 @@ function JewelOfIndia(map) {
     restaurantMarker.setMap(map);
     var link = '<a href = "http://www.jewelofindia.com.au/">Click Here</a>';
     var restaurantInfo = ' <h3>Jewel of India</h3>' +
-        ' <img src="images/location/jewel_logo.jpg"' +
+        ' <img src="../images/location/jewel_logo.jpg"' +
         '      style="float:left; width:25%; margin-right:10px;">' +
         " <p>Finding a balance between dishes inspired by authentic recipes and creating a modern take on " +
         "classic cuisine sees a loyal following of Canberra locals returning for a mouth-watering feast.<br><br>"
@@ -127,7 +127,7 @@ function ChairmanAndYip(map) {
     restaurantMarker.setMap(map);
     var link = '<a href = "http://chairmangroup.com.au/chairmanyip/">Click Here</a>';
     var restaurantInfo = ' <h3>Chairman & Yip</h3>' +
-        ' <img src="images/location/chairman_logo.jpg"' +
+        ' <img src="../images/location/chairman_logo.jpg"' +
         '      style="float:left; width:25%; margin-right:10px;">' +
         " <p>The Chairman & Yip has become one of Canberra\'s longest standing and most highly regarded institutions, " +
         "having received numerous awards over the years, offering an ever consistent and professional quality " +
@@ -148,7 +148,7 @@ function DANHouse(map) {
     restaurantMarker.setMap(map);
     var link = '<a href = "https://www.facebook.com/pages/Dickson-Asian-Noodle-House/156690017692038">Click Here</a>';
     var restaurantInfo = ' <h3>Dickson Asian Noodle House</h3>' +
-        ' <img src="images/location/noodle_logo.jpg"' +
+        ' <img src="../images/location/noodle_logo.jpg"' +
         '      style="float:left; width:25%; margin-right:10px;">' +
         " <p>The Dickson Asian Noodle House specialises in traditional Malaysian, Thai and Lao cuisine. " +
         "The dining atmosphere is casual and cosy providing for a la carte dining, banquets and take away.<br><br>"
