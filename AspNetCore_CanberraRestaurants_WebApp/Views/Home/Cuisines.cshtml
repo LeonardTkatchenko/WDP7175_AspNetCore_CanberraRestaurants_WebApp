@@ -4,4 +4,123 @@
 @{
     ViewData["Title"] = "Cuisines";
 }
-<h1>@ViewData["Title"]</h1>
+<div class="bgi">
+    <div class="bgc bgs">
+        <div id="introBox">Canberra Restaurants</div>
+        <div id="quote"><h1 class="niccone">Cuisines</h1></div>
+    </div>
+</div>
+
+<div class="accordion" id="myAcc">
+    <div class="card" style="margin-bottom:5px;">
+        <div class="card-header" id="headingOne" style="background-color:rgba(220,220,254,1)">
+            <button class="btn cardTitle" type="button" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne">Italian</button>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#myAcc" style="background-color: rgba(220,220,254,1)">
+
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-md-12 pb30">
+                        <img id="blurb" src="~/images/location/is_logo.jpg" />
+
+                        <h2>Italian and Sons</h2>
+                        <p>
+                            "A casual Italian trattoria that specialises in wood fired pizzas such as Rucola with Prosciutto di Parma,
+                            rucola & reggiano. Don't miss daily changing main dishes of the day such as their wood roast suckling pig,
+                            rosemary, garlic, baked baby fennel & mustard fruits." - Australian Good Food Guide Website.<br>
+                            <a href="http://italianandsons.com.au/">Click Here</a> for the Italian and Sons website.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pb30">
+                        <img id="blurb" src="~/images/location/bellucis_logo.jpg" />
+
+                        <h2>Belluci's Italian</h2>
+                        <p>
+                            "Belluci's demonstrates a new concept, a new food philosophy – the dawn of a new era in Canberra dining.
+                            Having been established more than 20 years ago, Belluci's fast became an iconic name in Canberra.
+                            To bring you the finest dishes, we’ve gone back to traditional Italian routes, creating simple, rustic food."
+                            - Belluci's Italian Website<br>
+                            <a href="https://bellucis.com.au/home.php">Click Here</a> for the Belluci's Italian website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom:5px;">
+        <div class="card-header" id="headingTwo" style="background-color:lightgray;">
+            <button class="btn cardTitle" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">Asian</button>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingThree" data-parent="#myAcc" style="background-color:lightgray">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-md-12 pb30">
+                        <img id="blurb" src="~/images/location/chairman_logo.jpg" />
+
+                        <h2>Chairman & Yip</h2>
+                        <p>
+                            "The Chairman & Yip has become one of Canberra’s longest standing and most highly regarded institutions,
+                            having received numerous awards over the years, offering an ever consistent and professional quality
+                            of service for corporate dining, conferences and presentations." - Chairman & Yip website.<br>
+                            <a href="http://chairmangroup.com.au/chairmanyip/">Click Here</a> for the Chairman & Yip website.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pb30">
+                        <img id="blurb" src="~/images/location/noodle_logo.jpg" />
+
+                        <h2>Dickson Asian Noodle House</h2>
+                        <p>
+                            "The Dickson Asian Noodle House specialises in traditional Malaysian, Thai and Lao cuisine.
+                            The dining atmosphere is casual and cosy providing for a la carte dining, banquets and take away."
+                            - Vibe FM Website<br>
+                            <a href="https://www.facebook.com/pages/Dickson-Asian-Noodle-House/156690017692038">Click Here</a> for the Dickson Asian Noodle House Facebook page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingThree" style="background-color: rgba(220,220,254,1)">
+            <button class="btn cardTitle" type="button" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree">Indian</button>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#myAcc" style="background-color: rgba(220,220,254,1)">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-md-12 pb30">
+                        <img id="blurb" src="~/images/location/bluginger_logo.jpg" />
+
+                        <h2>Blu Ginger</h2>
+                        <p>
+                            "At Blu Ginger we use only the freshest locally sourced produce, combined with authentic
+                            spices imported directly from the sub-continent, to offer classic, traditional recipes with
+                            a modern twist, creating a unique and memorable dining experience for you." - Blu Ginger Website.<br>
+                            <a href="http://www.bluginger.com.au/">Click Here</a> for the Blu Ginger website.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pb30">
+                        <img id="blurb" src="~/images/location/jewel_logo.jpg" />
+
+                        <h2>Jewel of India</h2>
+                        <p>
+                            "Finding a balance between dishes inspired by authentic recipes and creating a modern take on
+                            classic cuisine sees a loyal following of Canberra locals returning for a mouth-watering feast."
+                            - Australian Good Food Guide Website.<br>
+                            <a href="http://www.jewelofindia.com.au/">Click Here</a> for the Jewel of India website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
