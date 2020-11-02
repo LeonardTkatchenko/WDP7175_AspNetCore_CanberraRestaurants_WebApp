@@ -390,16 +390,17 @@ mr30 {
     padding-right: 0px;
 }
 
+.row {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
 /**Resizing**/
 @media (min-width: 992px) {
     .niccone {
         font-size: 3.6em;
         padding-bottom: 50px;
     }
-
-    h2 {
-    }
-
     .frontQ {
         font-size: 20px;
     }
@@ -467,7 +468,7 @@ mr30 {
         line-height: 16px;
     }
 
-    h2 {
+    .oxygenh2 {
         font-size: 20px;
         margin-top: 10px;
     }
