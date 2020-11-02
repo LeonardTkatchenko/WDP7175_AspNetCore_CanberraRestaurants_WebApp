@@ -23,7 +23,37 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Restaurants()
+        {
+            return View();
+        }
+
+        public IActionResult Cuisines()
+        {
+            return View();
+        }
+
+        public IActionResult Dishes()
+        {
+            return View();
+        }
+
+        public IActionResult Prices()
+        {
+            return View();
+        }
+
+        public IActionResult Locations()
+        {
+            return View();
+        }
+
+        public IActionResult ContactAbout()
+        {
+            return View();
+        }
+
+        public IActionResult Reviews()
         {
             return View();
         }
