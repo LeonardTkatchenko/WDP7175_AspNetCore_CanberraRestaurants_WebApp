@@ -19,12 +19,20 @@
             </div>
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
+                <input asp-for="UserName" class="form-control" value="@User.Identity.Name" readonly/>
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TopicTitle" class="control-label"></label>
-                <input asp-for="TopicTitle" class="form-control" />
+                <select asp-for="TopicTitle" class="form-control">
+                    <option value="" selected disabled>Select a topic</option>
+                    <option>Restaurant 1</option>
+                    <option>Restaurant 2</option>
+                    <option>Restaurant 3</option>
+                    <option>Restaurant 4</option>
+                    <option>Restaurant 5</option>
+                    <option>Restaurant 6</option>
+                </select>
                 <span asp-validation-for="TopicTitle" class="text-danger"></span>
             </div>
             <div class="form-group">
