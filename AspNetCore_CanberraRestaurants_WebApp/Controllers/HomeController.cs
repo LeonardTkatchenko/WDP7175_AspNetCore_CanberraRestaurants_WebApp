@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AspNetCore_CanberraRestaurants_WebApp.Models;
+using AspNetCore_CanberraRestaurants_WebApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -23,10 +28,12 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
             return View();
         }
 
-        public IActionResult Restaurants()
+
+        public async Task<IActionResult> Restaurants()
         {
-            return View();
+            return View(await _context.ReviewsForum.ToListAsync());
         }
+
 
         public IActionResult Cuisines()
         {
