@@ -200,9 +200,9 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Restaurants", "Home");
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Restaurants", "Home");
         }
 
         public async Task<IActionResult> IncreaseDisagree(int? id)
@@ -242,9 +242,9 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Restaurants", "Home");
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Restaurants", "Home");
         }
     }
 }
