@@ -59,7 +59,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.MessageContent)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disagree)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -79,6 +84,12 @@
                 @Html.DisplayFor(modelItem => item.MessageContent)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Agree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disagree)
+            </td>
+            <td>
                 @if (User.IsInRole("Manager"))
                 {
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
@@ -89,6 +100,20 @@
                 {
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 }
+
+
+                @if (User.IsInRole("Manager"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <span> | </span>
+                }
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> <span> | </span>
+                @if (User.IsInRole("Manager"))
+                {
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> <span> | </span>
+                }
+                <a asp-action="IncreaseAgree" asp-route-id="@item.Id">Agree</a> <span> | </span>
+                <a asp-action="IncreaseDisagree" asp-route-id="@item.Id">Disagree</a>
+
             </td>
 
         </tr>

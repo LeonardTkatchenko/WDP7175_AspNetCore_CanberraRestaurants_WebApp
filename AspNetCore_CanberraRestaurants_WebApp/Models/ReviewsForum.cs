@@ -24,6 +24,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Models
         [Display(Name = "Message Content")]
         public string MessageContent { get; set; }
 
-
+        public int Agree { get; set; }
+        public int Disagree { get; set; }
     }
 }

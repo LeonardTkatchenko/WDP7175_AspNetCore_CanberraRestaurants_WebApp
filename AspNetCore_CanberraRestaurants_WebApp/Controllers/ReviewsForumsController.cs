@@ -162,5 +162,79 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         {
             return _context.ReviewsForum.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> IncreaseAgree(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var reviewsForum = await _context.ReviewsForum.FindAsync(id);
+            if (reviewsForum == null)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    reviewsForum.Agree++;
+
+                    _context.Update(reviewsForum);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ReviewsForumExists(reviewsForum.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> IncreaseDisagree(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var reviewsForum = await _context.ReviewsForum.FindAsync(id);
+            if (reviewsForum == null)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    reviewsForum.Disagree++;
+
+                    _context.Update(reviewsForum);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ReviewsForumExists(reviewsForum.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
