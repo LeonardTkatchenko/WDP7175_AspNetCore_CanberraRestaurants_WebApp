@@ -97,7 +97,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Manager")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PostDate,UserName,TopicTitle,MessageContent")] ReviewsForum reviewsForum)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PostDate,UserName,TopicTitle,MessageContent,Agree,Disagree")] ReviewsForum reviewsForum)
         {
             if (id != reviewsForum.Id)
             {
