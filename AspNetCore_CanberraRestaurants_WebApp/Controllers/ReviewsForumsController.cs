@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AspNetCore_CanberraRestaurants_WebApp.Data;
 using AspNetCore_CanberraRestaurants_WebApp.Models;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
 {
@@ -44,6 +46,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         }
 
         // GET: ReviewsForums/Create
+        [Authorize(Roles ="Manager, RegisteredUser")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +57,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles ="Manager, RegisteredUser")]
         public async Task<IActionResult> Create([Bind("Id,PostDate,UserName,TopicTitle,MessageContent")] ReviewsForum reviewsForum)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         }
 
         // GET: ReviewsForums/Edit/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +91,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,PostDate,UserName,TopicTitle,MessageContent")] ReviewsForum reviewsForum)
         {
             if (id != reviewsForum.Id)
@@ -117,6 +123,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         }
 
         // GET: ReviewsForums/Delete/5
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +144,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         // POST: ReviewsForums/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var reviewsForum = await _context.ReviewsForum.FindAsync(id);
