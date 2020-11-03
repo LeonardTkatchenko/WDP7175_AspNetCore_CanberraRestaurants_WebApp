@@ -31,7 +31,12 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
 
         public async Task<IActionResult> Restaurants()
         {
-            return View(await _context.ReviewsForum.ToListAsync());
+            var allReviews = from result in _context.ReviewsForum
+                                 orderby result.PostDate descending
+                                 select result;
+
+            return View(await allReviews.ToListAsync());
+            //return View(await _context.ReviewsForum.ToListAsync());
         }
 
 
