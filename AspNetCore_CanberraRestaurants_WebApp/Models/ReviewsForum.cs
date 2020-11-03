@@ -25,6 +25,8 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Models
         public string MessageContent { get; set; }
 
         public int Agree { get; set; }
+        public bool canIncreaseAgree { get; set; }
         public int Disagree { get; set; }
+        public bool canIncreaseDisagree { get; set; }
     }
 }

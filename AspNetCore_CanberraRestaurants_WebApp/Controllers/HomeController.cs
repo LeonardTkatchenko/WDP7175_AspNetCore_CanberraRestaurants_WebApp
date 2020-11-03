@@ -31,6 +31,17 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
 
         public async Task<IActionResult> Restaurants()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                foreach (var post in _context.ReviewsForum)
+                {
+                    post.canIncreaseAgree = true;
+                    post.canIncreaseDisagree = true;
+                }
+
+                await _context.SaveChangesAsync();
+            }
+
             var allReviews = from result in _context.ReviewsForum
                                  orderby result.PostDate descending
                                  select result;

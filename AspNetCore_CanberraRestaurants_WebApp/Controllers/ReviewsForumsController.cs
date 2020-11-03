@@ -179,11 +179,16 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
             {
                 try
                 {
-                    reviewsForum.Agree++;
-
-                    _context.Update(reviewsForum);
-                    await _context.SaveChangesAsync();
+                    if (User.Identity.IsAuthenticated &&
+                        reviewsForum.canIncreaseAgree)
+                    {
+                        reviewsForum.Agree++;
+                        reviewsForum.canIncreaseAgree = false;
+                        _context.Update(reviewsForum);
+                        await _context.SaveChangesAsync();
+                    }
                 }
+
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ReviewsForumExists(reviewsForum.Id))
@@ -216,11 +221,16 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
             {
                 try
                 {
-                    reviewsForum.Disagree++;
-
-                    _context.Update(reviewsForum);
-                    await _context.SaveChangesAsync();
+                    if (User.Identity.IsAuthenticated &&
+                        reviewsForum.canIncreaseDisagree)
+                    {
+                        reviewsForum.Disagree++;
+                        reviewsForum.canIncreaseDisagree = false;
+                        _context.Update(reviewsForum);
+                        await _context.SaveChangesAsync();
+                    }
                 }
+
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ReviewsForumExists(reviewsForum.Id))
