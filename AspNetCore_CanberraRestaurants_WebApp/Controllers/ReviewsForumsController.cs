@@ -22,6 +22,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         }
 
         // GET: ReviewsForums
+        [Authorize(Roles = "Manager, RegisteredUser")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.ReviewsForum.ToListAsync());
@@ -49,7 +50,11 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         [Authorize(Roles ="Manager, RegisteredUser")]
         public IActionResult Create()
         {
-            return View();
+            ReviewsForum forum = new ReviewsForum
+            {
+                PostDate = DateTime.Now
+            };
+            return View(forum);
         }
 
         // POST: ReviewsForums/Create
