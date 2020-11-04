@@ -10,18 +10,18 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Post Date")]
+        [Display(Name = "Date")]
         public DateTime PostDate { get; set; }
 
-        [Display(Name = "User Name")]
+        [Display(Name = "Name")]
         public string UserName { get; set; }
 
         [Required]
-        [Display(Name = "Topic Title")]
+        [Display(Name = "Restaurant")]
         public string TopicTitle { get; set; }
 
         [Required]
-        [Display(Name = "Message Content")]
+        [Display(Name = "Comment")]
         public string MessageContent { get; set; }
 
         public int Agree { get; set; }
