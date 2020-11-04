@@ -61,7 +61,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles ="Manager, RegisteredUser")]
-        public async Task<IActionResult> Create([Bind("Id,PostDate,UserName,Header,TopicTitle,MessageContent,Rating")] ReviewsForum reviewsForum)
+        public async Task<IActionResult> Create([Bind("Id,PostDate,UserName,Header,TopicTitle,MessageContent,Rating,Agree,Disagree")] ReviewsForum reviewsForum)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Manager")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PostDate,UserName,Header,TopicTitle,MessageContent,Rating")] ReviewsForum reviewsForum)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PostDate,UserName,Header,TopicTitle,MessageContent,Rating,Agree,Disagree")] ReviewsForum reviewsForum)
         {
             if (id != reviewsForum.Id)
             {
@@ -182,6 +182,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
                     {
                         reviewsForum.Agree++;
                         reviewsForum.canIncreaseAgree = false;
+                        reviewsForum.canIncreaseDisagree = false;
                         _context.Update(reviewsForum);
                         await _context.SaveChangesAsync();
                     }
@@ -223,6 +224,7 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
                         reviewsForum.canIncreaseDisagree)
                     {
                         reviewsForum.Disagree++;
+                        reviewsForum.canIncreaseAgree = false;
                         reviewsForum.canIncreaseDisagree = false;
                         _context.Update(reviewsForum);
                         await _context.SaveChangesAsync();
