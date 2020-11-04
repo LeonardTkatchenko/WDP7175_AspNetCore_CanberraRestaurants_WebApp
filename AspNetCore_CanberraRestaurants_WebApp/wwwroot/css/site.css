@@ -257,6 +257,11 @@ mr30 {
     margin-right: 60px;
 }
 
+.submit-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /**ContactAbout stuff**/
 .contact-form {
     width: 80%;
@@ -393,6 +398,8 @@ mr30 {
 .row {
     padding-left: 1%;
     padding-right: 1%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .pad20 {

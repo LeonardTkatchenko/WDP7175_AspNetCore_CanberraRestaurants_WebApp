@@ -13,37 +13,40 @@
 
 <div class="container-fluid ml-1 mr-1">
     <div class="row">
-        <div class="col-md-6 col-sm-12 col-12 pb30">
+        <div class="col-md-6 col-sm-12 col-12 p-2">
             <h2 class="oxygenh2">BE THE CRITIC</h2>
-            <p style="padding-left:10px">
+            <p class="row p-2">
                 Have you ever been to a restaurant recently and loved it or loated it?
                 Then tell us about it.
             </p>
-            <p style="padding-left:10px">
+            <p class="row p-2">
                 Find your inner restaurant critic and create an account to review your recent
                 dining experience.
             </p>
         </div>
-        <div class="col-md-6 col-sm-12 col-12 welcome-image pb30">
-            <div class="row centre p10">
+        <div class="col-md-6 col-sm-12 col-12 welcome-image p-2">
+            <div class="row p-2">
                 <div class="col-md-6 col-sm-6 col-6" style="background-size:90%"><img src="../images/burger.jpeg" alt="Hamburger and Chips" /></div>
                 <div class="col-md-6 col-sm-6 col-6" style="background-size:90%"><img src="../images/pasta.jpeg" alt="Chicken pasta" /></div>
             </div>
         </div>
-        <span class="pb30" style="padding-left: 20px;">Please log in or create an account to review a restaurant.</span>
     </div>
 
 </div>
 
 <div class="pad20">
-    @{
-        if (User.Identity.IsAuthenticated)
+    <div class="submit-btn">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a asp-action="Create" class="btn btn-info"> Submit your review</a>
+        }
+        else
         {
             <p>
-                <a asp-action="Create">Create New</a>
+                Please <a href="~/Identity/Account/Login?returnUrl=~/Home/Restaurants">login</a> or <a href="~/Identity/Account/Register?returnUrl=~/Home/Privacy">create an account</a> to post your discussion on this page
             </p>
         }
-    }
+    </div>
 
     @foreach (var item in Model)
     {
@@ -70,70 +73,4 @@
         <a asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-secondary">Disagree(-)</a>
         <hr />
     }
-
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PostDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TopicTitle)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MessageContent)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Agree)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Disagree)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PostDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TopicTitle)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MessageContent)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Agree)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Disagree)
-                    </td>
-                    <td>
-                        @if (User.IsInRole("Manager"))
-                        {
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> <span> | </span>
-                        }
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> <span> | </span>
-                        @if (User.IsInRole("Manager"))
-                        {
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> <span> | </span>
-                        }
-                        <a asp-action="IncreaseAgree" asp-route-id="@item.Id">Agree(+)</a> <span> | </span>
-                        <a asp-action="IncreaseDisagree" asp-route-id="@item.Id">Disagree(-)</a>
-
-                    </td>
-
-                </tr>
-            }
-        </tbody>
-    </table>
 </div>
