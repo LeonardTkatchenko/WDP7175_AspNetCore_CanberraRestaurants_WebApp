@@ -42,9 +42,9 @@
         }
         else
         {
-    <p>
-        Please <a href="~/Identity/Account/Login?returnUrl=~/Home/Restaurants">login</a> or <a href="~/Identity/Account/Register?returnUrl=~/Home/Restaurants">create an account</a> to post your discussion on this page
-    </p>
+            <p>
+                Please <a href="~/Identity/Account/Login?returnUrl=~/Home/Restaurants">login</a> or <a href="~/Identity/Account/Register?returnUrl=~/Home/Restaurants">create an account</a> to post your discussion on this page
+            </p>
         }
     </div>
 
@@ -63,14 +63,19 @@
                 }
             }
         </p>
-        <p>@Html.DisplayFor(modelItem => item.Disagree)</p>
         <p>@Html.DisplayFor(modelItem => item.MessageContent)</p>
-        <p>Posted by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on @Html.DisplayFor(modelItem => item.PostDate)</p>
-        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-        <a asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-secondary">Agree(+)</a>
-        <a asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-secondary">Disagree(-)</a>
-        <hr />
+        <p>Review by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on <b>@Html.DisplayFor(modelItem => item.PostDate)</b></p>
+        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+        <a asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-success">Agree(+)</a>
+        <a asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-danger">Disagree(-)</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Manager"))
+            {
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
+            }
+        }
+        <hr class="blueHr">
     }
 </div>
