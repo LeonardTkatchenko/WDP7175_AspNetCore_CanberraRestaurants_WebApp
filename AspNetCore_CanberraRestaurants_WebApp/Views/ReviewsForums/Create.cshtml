@@ -4,10 +4,14 @@
     ViewData["Title"] = "Create";
 }
 
-<div class="pad20">
-    <h1>Create</h1>
+<div class="bgis">
+    <div class="bgc bgs">
+        <div id="introBox">Canberra Restaurants</div>
+        <div id="quote"><h1 class="niccone">Create a Review</h1></div>
+    </div>
+</div>
 
-    <h4>ReviewsForum</h4>
+<div class="pad20">
     <hr />
     <div class="row">
         <div class="col-md-4">
@@ -50,6 +54,7 @@
                     <label asp-for="Rating" class="control-label"></label>
                     <select asp-for="Rating" class="form-control">
                         <option value="" selected disabled>Select Rating</option>
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
