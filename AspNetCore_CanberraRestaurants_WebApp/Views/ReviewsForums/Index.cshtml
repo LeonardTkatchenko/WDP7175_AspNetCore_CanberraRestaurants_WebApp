@@ -66,8 +66,8 @@
         <p>@Html.DisplayFor(modelItem => item.MessageContent)</p>
         <p>Review by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on <b>@Html.DisplayFor(modelItem => item.PostDate)</b></p>
         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
-        <a asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-success">Agree(+)</a>
-        <a asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-danger">Disagree(-)</a>
+        <a asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-success">Agree(@Html.DisplayFor(modelItem => item.Agree))</a>
+        <a asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-danger">Disagree(@Html.DisplayFor(modelItem => item.Disagree))</a>
         @if (User.Identity.IsAuthenticated)
         {
             if (User.IsInRole("Manager"))

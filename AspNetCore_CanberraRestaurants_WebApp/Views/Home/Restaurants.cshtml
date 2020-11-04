@@ -136,14 +136,19 @@
                 }
             }
         </p>
-        <p>@Html.DisplayFor(modelItem => item.Disagree)</p>
         <p>@Html.DisplayFor(modelItem => item.MessageContent)</p>
-        <p>Posted by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on @Html.DisplayFor(modelItem => item.PostDate)</p>
-        <a asp-controller="ReviewsForums" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-        <a asp-controller="ReviewsForums" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-        <a asp-controller="ReviewsForums" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-        <a asp-controller="ReviewsForums" asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-secondary">Agree(+)</a>
-        <a asp-controller="ReviewsForums" asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-secondary">Disagree(-)</a>
+        <p>Review by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on <b>@Html.DisplayFor(modelItem => item.PostDate)</b></p>
+        <a asp-controller="ReviewsForums" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+        <a asp-controller="ReviewsForums" asp-action="IncreaseAgree" asp-route-id="@item.Id" class="btn btn-success">Agree(@Html.DisplayFor(modelItem => item.Agree))</a>
+        <a asp-controller="ReviewsForums" asp-action="IncreaseDisagree" asp-route-id="@item.Id" class="btn btn-danger">Disagree(@Html.DisplayFor(modelItem => item.Disagree))</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Manager"))
+            {
+                <a asp-controller="ReviewsForums" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                <a asp-controller="ReviewsForums" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
+            }
+        }
         <hr class="blueHr">
     }
 </div>
