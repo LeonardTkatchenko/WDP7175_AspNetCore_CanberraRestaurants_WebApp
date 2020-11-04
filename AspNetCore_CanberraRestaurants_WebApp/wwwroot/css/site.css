@@ -395,6 +395,10 @@ mr30 {
     padding-right: 1%;
 }
 
+.pad20 {
+    padding: 20px;
+}
+
 /**Resizing**/
 @media (min-width: 992px) {
     .niccone {
