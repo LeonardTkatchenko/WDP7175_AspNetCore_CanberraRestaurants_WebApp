@@ -21,8 +21,6 @@ namespace AspNetCore_CanberraRestaurants_WebApp.Controllers
             _context = context;
         }
 
-        // GET: ReviewsForums
-        [Authorize(Roles = "Manager, RegisteredUser")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.ReviewsForum.ToListAsync());
